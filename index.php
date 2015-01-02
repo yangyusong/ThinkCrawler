@@ -29,7 +29,6 @@ if(count($match) > 1)
     print_r($domainUrls);
 }
 
-//echo "ok";
 //print_r($domainUrls);
 //echo $content;
 //    $nameJson = json_decode($nameStr);
