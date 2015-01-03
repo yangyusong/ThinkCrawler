@@ -1,3 +1,4 @@
 ### simple news crawler
 ---
-## now only can save urls
+## now it can save url to mysql
+## save html file to dest folder
