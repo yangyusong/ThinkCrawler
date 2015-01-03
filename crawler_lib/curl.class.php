@@ -25,7 +25,12 @@ class cURL {
         }
     }
     function get($url) {
+        try{
         $process = curl_init($url);
+    }catch (Exception $e)
+        {
+            echo $url.'\n';
+        }
         curl_setopt($process, CURLOPT_HTTPHEADER, $this->headers);
         curl_setopt($process, CURLOPT_HEADER, 0);
         curl_setopt($process, CURLOPT_USERAGENT, $this->user_agent);

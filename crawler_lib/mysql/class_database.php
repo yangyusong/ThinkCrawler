@@ -33,7 +33,7 @@ class database
         $this->user = sys_conf::$DBUSER;
         $this->pwd = sys_conf::$DBPASSWORD;
         $this->name = sys_conf::$DBNAME;
-        $this->connection = mysql_pconnect($this->host, $this->user, $this->pwd) or die("链接不了数据库");
+        $this->connection = mysql_connect($this->host, $this->user, $this->pwd) or die("链接不了数据库");
         mysql_select_db($this->name, $this->connection);
     }
 

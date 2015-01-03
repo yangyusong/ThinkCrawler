@@ -15,8 +15,7 @@ class domain
             $parse = @parse_url($host);
             if(!isset($parse ['host']))
             {
-                echo $host;
-                exit();
+                return '';
             }
             $host = $parse ['host'];
         }
@@ -34,6 +33,9 @@ class domain
             $domain = $matchs ['0'];
         } else {
             $domain = $host;
+            if (strpos($host, '/') === false) {
+                $domain = '';
+            }
         }
         return $domain;
     }
@@ -41,9 +43,9 @@ class domain
     static function getUrlsByDomain($urls, $domain){
         $domainUrls = array();
         foreach ($urls as $key => $url) {
-            if(static::getDomain($url) === $domain)
+            if(static::getDomain($url) == $domain)
             {
-                $domainUrls[] = $url;
+                $domainUrls[$url] = $url;
             }
         }
 
@@ -53,8 +55,8 @@ class domain
 
     public function _test(){
         $str = "http://www.jb51.net/tools/zhengze.html";
+        echo domain::getDomain('products/products-install');
         echo getdomain ( $str );
     }
 
 }
-

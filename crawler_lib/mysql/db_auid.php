@@ -10,7 +10,7 @@
  * c.按照联合主键进行查询，（每个字段均为键值对）
  * d.获取所有id,这个id并非就叫id，满足如下条件：主键之一，数字类型，唯一性
  * 2.添加
- * 3.这些函数包括了 条件，排序，还有限数没写（limit）
+ * 3.这些函数包括了 条件，排序，限数
  */
 include_once __DIR__.'/class_database.php';
 //include_once __DIR__.'/db_more.php';
@@ -260,10 +260,10 @@ function delete_key($tab, $where)
  * @param <type> $tab
  * @return <type>
  */
-function tuncate($tab)
+function truncate($tab)
 {
     $db = new database();
-    $sql = "tuncate table `{$tab}`";
+    $sql = "truncate table `{$tab}`";
     return $db->execute($sql);
 }
 
